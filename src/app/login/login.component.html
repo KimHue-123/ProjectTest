@@ -1,0 +1,58 @@
+
+<!-- <form>
+    <label>
+        Name:
+        <input type="text" [formControl]="name">
+    </label> <br>
+    <button (click)="updateName()">Update Name</button>
+    <p>
+        Value: {{ name.value }}
+    </p>
+</form> -->
+
+<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        First Name:
+        <input type="text" formControlName="UserName" required>
+    </label>
+    <br>
+    <label>
+        Password:
+        <input type="password" formControlName="Password" required>
+    </label><br>
+    <button type="submit" [disabled]="!profileForm.valid" class="btn btn-success">Submit</button>
+</form> -->
+
+
+<div class="container">
+    <div class="row vertical-offset-100">
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Please sign in</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" role="form">
+                    <fieldset>
+			    	  	<div class="form-group">
+                            <input type="text" formControlName="UserName" required class="form-control" placeholder="UserName">
+                        </div>
+                        <span *ngIf="profileForm.controls.UserName.invalid" class="text-danger">UserName is not null</span>
+			    		<div class="form-group">
+                            <input type="password" formControlName="Password" required class="form-control" placeholder="Password">
+                        </div>
+                        <span *ngIf="profileForm.controls.Password.invalid" class="text-danger">Password is not null</span>
+			    		<div class="checkbox">
+			    	    	<label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+			    	    	</label>
+			    	    </div>
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login" [disabled]="!profileForm.valid">
+			    	</fieldset>
+			      	</form>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>

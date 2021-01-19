@@ -1,0 +1,28 @@
+<!-- (ngSubmit)="addNewCustomer()" -->
+<form class="example-form" [formGroup]="addCustomerForm" >
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field><br>
+
+    <!-- <mat-radio-group aria-label="Select an option" formControlName="sex">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+    </mat-radio-group> -->
+    <mat-form-field class="example-full-width">
+        <mat-label>Sex</mat-label>
+        <input matInput formControlName="sex">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>PhoneNumber</mat-label>
+        <input matInput formControlName="phoneNumber">
+    </mat-form-field><br>
+    <button (click)= "addAndBackListCustomer()" mat-flat-button color="primary" class="btn-add-back-customer" [disabled]="!addCustomerForm.valid">Save-BackListCustomer</button>
+    <button (click) = "addANewCustomer()"mat-flat-button color="primary" class="btn-add-customer" [disabled]="!addCustomerForm.valid" >Save<span *ngIf="id === 0">-AddNew</span></button>
+</form>
+<!-- ( click) = "addAndBackListCustomer()"
+(click) = "addANewCustomer()" -->

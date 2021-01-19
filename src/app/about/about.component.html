@@ -1,0 +1,22 @@
+<p>about works!</p>
+<p>profile: {{name}}</p>
+<h2>Posts[0]</h2>
+<h3>id: {{id}}</h3>
+<h3>title: {{title}}</h3>
+<h3>author: {{author}}</h3>
+<input type="submit" value="Post Profile" (click)="PostProfile()">
+<h1>name just added: {{nameNew}}</h1>
+
+<table id="customers">
+    <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+    </tr>
+
+    <tr *ngFor="let arrPost of arrPosts">
+        <td>{{arrPost?.id}}</td>
+        <td>{{arrPost?.title}}</td>
+        <td>{{arrPost?.author}}</td>
+    </tr>
+</table>

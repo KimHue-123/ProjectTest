@@ -1,0 +1,93 @@
+<div class="md-form active-cyan-2 mb-3">
+    <!-- <input class="form-control fileSearch" #inputSearch (keyup.enter)="searchByname(inputSearch.value)" type="text" placeholder="Search" aria-label="Search"> -->
+    <input class="form-control fileSearch" [(ngModel)]="textSearch" (keyup.enter)="searchByname()"  type="text" placeholder="Search" aria-label="Search">
+</div>
+<div class="div-add-customer">
+    <button mat-raised-button color="primary" (click) = "addCustomer()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Address</th>
+            <th>Score</th>
+            <th>PhoneNumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container >
+            <tr *ngFor="let customer of listCustomers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.sex}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.score}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td><button mat-fab (click) = "deleteCustomer(customer.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon >delete</mat-icon>
+                    </button>
+                    <button mat-fab (click) = "editCustomer(customer.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                
+            </tr>
+        </ng-container>
+        <!-- <ng-container *ngIf="textSearch && listSearchByName.length">
+            <tr *ngFor="let customerSearch of listSearchByName">
+                <td>{{customerSearch.id}}</td>
+                <td>{{customerSearch.name}}</td>
+                <td>{{customerSearch.sex}}</td>
+                <td>{{customerSearch.address}}</td>
+                <td>{{customerSearch.score}}</td>
+                <td>{{customerSearch.phoneNumber}}</td>
+                <td><button mat-fab (click) = "deleteCustomer(customerSearch.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon >delete</mat-icon>
+                    </button>
+                    <button mat-fab (click) = "editCustomer(customerSearch.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                
+            </tr>
+        </ng-container>
+       
+        <ng-container *ngIf="textSearch === '' && listCustomers.length">
+            <tr *ngFor="let customer of listCustomers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.sex}}</td>
+                <td>{{customer.address}}</td>
+                <td>{{customer.score}}</td>
+                <td>{{customer.phoneNumber}}</td>
+                <td><button mat-fab (click) = "deleteCustomer(customer.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon >delete</mat-icon>
+                    </button>
+                    <button mat-fab (click) = "editCustomer(customer.id)" class="background-while-content btn-general" aria-label="Example icon button with a delete icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+                
+            </tr>
+        </ng-container> -->
+        
+    </tbody>
+</table>
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="pageEvent = getServerData($event)">
+</mat-paginator>
+<!-- <div *ngIf="pageEvent">
+    <h5>Page Change Event Properties</h5>
+    <div>List length: {{pageEvent.length}}</div>
+    <div>Page size: {{pageEvent.pageSize}}</div>
+    <div>Page index: {{pageEvent.pageIndex}}</div>
+  </div> -->
+
+<h1>CUSTOMER</h1>
