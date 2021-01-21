@@ -34,12 +34,16 @@ import { from } from 'rxjs';
 import {LayoutModule} from '@angular/cdk/layout';
 import { ContactComponent } from './contact/contact.component';
 
+import { EditorModule, TINYMCE_SCRIPT_SRC } from "@tinymce/tinymce-angular";
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerComponent } from './customer/customer.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { ProductComponent } from './product/product.component';
+import { BlogComponent } from './blog/blog.component';
+import { ListCustomerDialogComponent } from './list-customer-dialog/list-customer-dialog.component';
 
 
 
@@ -54,7 +58,9 @@ import { ProductComponent } from './product/product.component';
     AddCustomerComponent,
     ConfirmDialogComponent,
     AlertDialogComponent,
-    ProductComponent
+    ProductComponent,
+    BlogComponent,
+    ListCustomerDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,9 +81,11 @@ import { ProductComponent } from './product/product.component';
     MatSortModule,
     MatDialogModule,
     MatCarouselModule.forRoot(),
+    EditorModule,
     BrowserAnimationsModule
   ],
-  providers: [LayoutModule],
+  providers: [LayoutModule,
+                {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

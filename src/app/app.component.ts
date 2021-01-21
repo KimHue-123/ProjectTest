@@ -3,23 +3,20 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonService } from './Services/common.service';
 import { CustomerService } from './Services/customer.service';
 
-import {
-    // trigger,
-    // state,
-    // style,
-    animate,
-    transition,
-    // ...
-} from '@angular/animations';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    animate,
-    transition
-  ]
+//   animations: [
+//     trigger,
+//     state,
+//     style,
+//     animate,
+//     transition
+ // ]
+ //animations:[ trigger]
 })
 
 export class AppComponent {
