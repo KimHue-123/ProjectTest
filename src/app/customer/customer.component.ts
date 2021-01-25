@@ -42,19 +42,8 @@ export class CustomerComponent implements OnInit {
         console.log("pageIndex" + pageIndex)
         console.log("pageSize: " + pageSize)
         this.httpService.getListCustomer(pageIndex, pageSize, textSearch).subscribe((data)=>{
-            //this.listCustomers = data;
-            // for(let customer in data.recordset){
-            //     let temp = new Customer();
-            //     temp.id = customer.Id;
-            //     temp.name = customer.FullName;
-            //     temp.sex = customer.Sex;
-            //     temp.address = customer.AddressCustomer;
-            //     temp.score = customer.Score;
-            //     temp.phoneNumber = customer.PhoneNumber;
-            //     console.log("temp.address: " + temp.address)
-            //     this.listCustomers.push(temp)
-            // }
-            console.log("in subrice loadListCustomer ")
+            console.log("in subrice loadListCustomer ");
+            console.log("data.recordset: ", data.recordset)
             for(let i = 0; i < data.recordset.length; i++){
                 let temp = new Customer();
                 temp.id = data.recordset[i].Id;

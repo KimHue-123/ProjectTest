@@ -9,6 +9,7 @@ import {map} from "rxjs/operators";
   providedIn: 'root'
 })
 export class CustomerService {
+    editor
     private httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
@@ -24,6 +25,11 @@ export class CustomerService {
 //     return this.httpClient.get<any>(url, this.httpOptions)
 //                             .pipe(catchError(this.handleError));
 //     }
+
+getEditor(editor){
+    this.editor = editor;
+}
+
 //Lấy danh sách khách hàng
 public getListCustomer(pageIndex:number, pageSize: number, textSearch: string): Observable<any>{
     const url = `${this.REST_API_SERVE}/requests`;

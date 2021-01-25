@@ -1,0 +1,35 @@
+<!-- (ngSubmit)="addNewCustomer()" 
+<form class="example-form" [formGroup]="addBookForm" >
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>Book Category</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Author</mat-label>
+        <input matInput formControlName="author">
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>Publisher</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Current Quantity</mat-label>
+        <input matInput formControlName="cQuantity">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>PhoneNumber</mat-label>
+        <input matInput formControlName="phoneNumber">
+    </mat-form-field><br>
+    <button (click)= "addAndBackListCustomer()" mat-flat-button color="primary" class="btn-add-back-customer" [disabled]="!addCustomerForm.valid">Save-BackListCustomer</button>
+    <button (click) = "addANewCustomer()"mat-flat-button color="primary" class="btn-add-customer" [disabled]="!addCustomerForm.valid" >Save<span *ngIf="id === 0">-AddNew</span></button>
+</form> -->

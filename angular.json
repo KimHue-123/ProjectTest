@@ -29,12 +29,18 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
+              {
+                "glob": "**/*",
+                "input": "node_modules/tinymce",
+                "output": "/tinymce/"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/tinymce/tinymce.min.js"]
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -128,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "ProjectTest"
+  "defaultProject": "ProjectTest",
+  "cli": {
+    "analytics": "79751eab-5ab5-493b-a061-0a72feb0de2f"
+  }
 }

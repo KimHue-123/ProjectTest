@@ -48,6 +48,7 @@ export class BlogComponent implements OnInit {
 
     initEditor(event){
         this.editor = event.editor;
+        this.httpService.getEditor(event.editor);
     }
     openListCustomer(){
         const dialogRef = this.dialog.open(ListCustomerDialogComponent);

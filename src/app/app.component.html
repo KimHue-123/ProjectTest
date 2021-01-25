@@ -19,7 +19,8 @@
             <a mat-button [routerLink]="['/Contact']" [routerLinkActive]="'active-link'">
                 <mat-icon>perm_phone_msg</mat-icon><span class="example-app-name">Contact</span>
             </a>
-            <span matBadge="{{totalCustomer}}" matBadgeColor="warn" class="example-app-name font-text-header">Total customer</span>
+            <span matBadge="{{totalCustomer}}" matBadgeColor="warn" class="example-app-name font-text-header">Total
+                customer</span>
         </div>
 
 
@@ -61,6 +62,30 @@
             <mat-nav-list>
                 <a mat-list-item routerLink="/Blogs" [routerLinkActive]="'active-link'">Blogs</a>
             </mat-nav-list>
+            <mat-nav-list>
+                <a mat-list-item routerLink="/Category" [routerLinkActive]="'active-link'">Book Category</a>
+            </mat-nav-list>
+            <mat-nav-list>
+                <a mat-list-item routerLink="/Publisher" [routerLinkActive]="'active-link'">Publisher</a>
+            </mat-nav-list>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Book
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <a mat-list-item [routerLinkActive]="'active-link'">Add Book</a>
+                    </mat-nav-list>
+                    <mat-nav-list>
+                        <a mat-list-item [routerLinkActive]="'active-link'">Show Book</a>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
         </mat-sidenav>
 
         <mat-sidenav-content>
@@ -70,8 +95,8 @@
                 margin-right: 10px;
                 margin-left: 10px;
               ">
-                
-                
+
+
                 <router-outlet></router-outlet>
             </div>
         </mat-sidenav-content>

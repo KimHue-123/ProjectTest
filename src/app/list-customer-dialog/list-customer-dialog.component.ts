@@ -2,6 +2,7 @@ import { DataSource } from '@angular/cdk/table';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Customer } from '../models/Customer';
@@ -15,6 +16,7 @@ import { CustomerService } from '../Services/customer.service';
 export class ListCustomerDialogComponent implements OnInit {
 
     public listCustomers:Customer[] = [];
+    public dataSource: MatTableDataSource<Customer>;
     //public textSearch = '';
     public length = 50;
     public pageSize = 10;
@@ -53,6 +55,7 @@ export class ListCustomerDialogComponent implements OnInit {
                 console.log("temp.address: " + temp.address)
                 this.listCustomers.push(temp)
             }
+            this.dataSource = new MatTableDataSource(this.listCustomers) ;
             this.length = data.output.totalRecord;
             console.log("listCustomers 0 .name: ", this.listCustomers[0].name)
         });
@@ -71,6 +74,7 @@ export class ListCustomerDialogComponent implements OnInit {
     }
     clickTest(row){
         console.log("name of row", row.name)
+        this.httpService.editor.insertContent(row.name);
     }
 }
 

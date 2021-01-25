@@ -16,6 +16,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
 //import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
@@ -44,6 +47,9 @@ import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { ProductComponent } from './product/product.component';
 import { BlogComponent } from './blog/blog.component';
 import { ListCustomerDialogComponent } from './list-customer-dialog/list-customer-dialog.component';
+import { BookCategoryComponent } from './book-category/book-category.component';
+import { PublisherComponent } from './publisher/publisher.component';
+import { AddBookComponent } from './add-book/add-book.component';
 
 
 
@@ -60,7 +66,10 @@ import { ListCustomerDialogComponent } from './list-customer-dialog/list-custome
     AlertDialogComponent,
     ProductComponent,
     BlogComponent,
-    ListCustomerDialogComponent
+    ListCustomerDialogComponent,
+    BookCategoryComponent,
+    PublisherComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +91,9 @@ import { ListCustomerDialogComponent } from './list-customer-dialog/list-custome
     MatDialogModule,
     MatCarouselModule.forRoot(),
     EditorModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatSelectModule,
     BrowserAnimationsModule
   ],
   providers: [LayoutModule,
